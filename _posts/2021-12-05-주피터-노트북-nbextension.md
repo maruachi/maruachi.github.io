@@ -17,7 +17,7 @@ jupyter nbextension enable varInspector/main
 다음과 같이 실행하면 아래 사진 같이 nbextension tap이 생긴다.
 ![nbextension tap](http://maruachi.github.io/gallery/nbextension/Screen Shot 2021-12-05 at 9.11.25 PM.png)
 
-확장을 추가하거나 확인은 위에 탭을 이용하거나ㅣ 아래의 cml 환경에서는 아래의 명령어를 이용하면 된다.
+확장을 추가하거나 확인은 위에 탭을 이용하거나 아래의 cml 환경에서는 아래의 명령어를 이용하면 된다.
 ```
 jupyter nbextension list // 동작중인 확장 목록 확인
 jupyter nbextension enable  [extension]  // 확장 추가
