@@ -18,9 +18,9 @@ minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt
 locale                   : "ko-KR" # reference table https://docs.microsoft.com/en-us/previous-versions/commerce-server/ee825488(v=cs.20)?redirectedfrom=MSDN
 title                    : "GyuTorage (규토리지)"
 title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Donggyu (동규)"
-description              : "Personal space. I usually organize the material for my study. My interest is mainly about IT tech, quantum tech, sport climbing. Welcome to the gyutorage. 개인적인 공간이에요. 주로 공부한 자료를 정리했어요. 관심사는 IT 기술과 양자 기술 그리고 클라이밍이에요. 규토리지로 어서와!"
+subtitle                 : "subtitle tag" # site tagline that appears below site title in masthead
+name                     : "name tag"
+description              : "description tag"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
