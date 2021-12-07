@@ -110,7 +110,7 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "yimdgkr@gmail.com"
+      # url: "yimdgkr@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -125,7 +125,7 @@ author:
       url: "https://github.com/maruachi"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: "https://www.instagram.com/imeastgyu/"
+      url: "https://www.instagram.com/imeastgyu/"
 
 # Site Footer
 footer:
