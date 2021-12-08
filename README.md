@@ -1,3 +1,10 @@
+## 참고 사이트
+[jekyll official document](https://jekyllrb.com/docs)
+[minimal-mistakes guide](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)
+
+draft를 확인 ``jekyll serve --drafts``
+
+
 ## Jekyll 디렉토리 구조
 
 1. 반드시 변경

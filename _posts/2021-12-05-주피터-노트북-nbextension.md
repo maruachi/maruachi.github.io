@@ -1,4 +1,10 @@
-# 주피터 노트북 nbextension
+---
+layout: posts
+title: 주피터 노트북 nbextension
+tag: jupyter notebook
+tags: nbextension
+---
+
 
 nbextension을 extension을 모아 놓은 모음집 같은 것으로 필요한 확장들을 키거나 끌 수 있다. 브라우저에 새로운 기능을 설치하는 chrome extension처럼 주피터 노트북에 extension을 설치할 수 있다.
 
@@ -15,7 +21,7 @@ jupyter contrib nbextension install --user
 jupyter nbextension enable varInspector/main
 ```
 다음과 같이 실행하면 아래 사진 같이 nbextension tap이 생긴다.
-![nbextension tap](http://maruachi.github.io/assets/images/nbextension-tap.png)
+![nbextension tap](/assets/images/nbextension-tap.png)
 
 확장을 추가하거나 확인은 위에 탭을 이용하거나 아래의 cml 환경에서는 아래의 명령어를 이용하면 된다.
 ```
