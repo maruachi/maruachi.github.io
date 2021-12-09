@@ -83,4 +83,6 @@ up to an overall factor.
 
 ## 참고자료
 [1] [Qiskit-official document: grover-algorithm](https://qiskit.org/textbook/ch-algorithms/grover.html)<br>
-[2] [Quantum Machine Learning **2018** nature](https://arxiv.org/pdf/1611.09347.pdf)
+[2] [Quantum Machine Learning **2018** nature](https://arxiv.org/pdf/1611.09347.pdf)<br>
+[3] [Quantum supremacy using a programmable superconducting processor **2019** nature](https://www.nature.com/articles/s41586-019-1666-5)<br>
+[4] [First quantum computer to pack 100 qubits enters crowded race](https://www.nature.com/articles/d41586-021-03476-5)
