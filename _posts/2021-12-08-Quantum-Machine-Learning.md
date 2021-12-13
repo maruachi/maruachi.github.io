@@ -2,6 +2,7 @@
 layout: posts
 title: 양자컴퓨터와 그로버 알고리즘
 tag: quantum computer
+categories: Quantum Technology
 ---
 
 ### Quantum state

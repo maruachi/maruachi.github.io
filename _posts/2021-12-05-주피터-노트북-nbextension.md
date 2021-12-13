@@ -1,8 +1,8 @@
 ---
 layout: posts
 title: 주피터 노트북 nbextension
-tag: jupyter notebook
-tags: nbextension
+tags: [nbextension, jupyter notebook]
+categories: IT
 ---
 
 

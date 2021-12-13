@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-# about
+**Gyu + Storage = Gyutorage**

@@ -1,8 +1,8 @@
 ---
 layout: posts
 title: jekyll server local test
-tag: jekyll server
-tags: local
+tags: [local, jekyll server]
+categories: IT
 ---
 
 jekyll은 ruby로 구성된 텍스트 변환 프로그램이다. mackdown 언어나 기타 환경 파일들을 읽어 정접 웹을 만들어준다. jekyll-theme마 별로 플러그인이나 기타 필요한 파일들이 다를 수 있다. 여기서는 minimal-mistakes 테마를 로컬로 구동시키는 경우를 살펴본다
