@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f0e6">
+  <meta name="description" content="사람과 이야기가 중심인 EDC 커뮤니티 Pockets UI/UX 시안 v5">
+  <title>Pockets — Every Carry. Everyone's Story.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Noto+Sans+KR:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+  <header class="global-header">
+    <button class="brand" type="button" data-go="home" aria-label="Pockets 홈">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span><b>POCKETS</b><small>EVERY CARRY. EVERYONE'S STORY.</small></span>
+    </button>
+    <nav class="main-nav" aria-label="주요 메뉴">
+      <button class="active" type="button" data-go="home">모임</button>
+      <button type="button" data-go="feed">피드</button>
+      <button type="button" data-go="profile">기록</button>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" type="button" data-toast="‘비 오는 날 라이트’, ‘500g 아래’처럼 찾아보세요." aria-label="검색">⌕</button>
+      <button class="activity-button" type="button" data-toast="새 공감 8개, 답글 3개가 도착했어요." aria-label="알림"><span></span>8</button>
+      <button class="avatar my-avatar" type="button" data-go="profile" aria-label="내 프로필">동</button>
+      <button class="make-button" type="button" data-go="compose"><span>＋</span> 내 Carry</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="screen active" id="home" data-screen="home">
+      <div class="home-grid">
+        <section class="welcome-panel">
+          <p class="presence"><i></i> 지금 128명이 함께 있어요</p>
+          <h1>오늘은 어떤<br><em>주머니</em>로 왔나요?</h1>
+          <p class="welcome-copy">물건의 가격보다 고른 이유를,<br>스펙보다 함께한 시간을 나눠요.</p>
+          <button class="text-link" type="button" data-go="feed">모두의 Carry 구경하기 <span>→</span></button>
+
+          <div class="member-chain" aria-label="새로 인사한 멤버">
+            <span class="avatar avatar-coral">해</span><span class="avatar avatar-blue">준</span><span class="avatar avatar-green">윤</span><span class="avatar avatar-yellow">솔</span><span class="avatar avatar-ink">＋19</span>
+            <p><b>오늘 23명이</b><br>처음 주머니를 열었어요</p>
+          </div>
+        </section>
+
+        <section class="live-board" aria-labelledby="live-title">
+          <header class="board-head">
+            <div><span class="eyebrow">COMMUNITY NOW</span><h2 id="live-title">지금 여기서 나누는 것들</h2></div>
+            <time>SEP 06 · 21:48</time>
+          </header>
+
+          <div class="community-collage">
+            <article class="person-post hero-post" tabindex="0" data-open-post>
+              <div class="post-photo">
+                <img src="../v2/assets/edc-flatlay.png" alt="민규의 472g 출퇴근 Carry">
+                <span class="photo-stamp">472G · 7 ITEMS</span>
+              </div>
+              <div class="post-person"><span class="avatar avatar-coral">민</span><p><b>민규</b><small>출퇴근 Carry · 방금 전</small></p><em>LIVE</em></div>
+              <h3>“기계는 좋아하지만<br>주머니는 가볍게.”</h3>
+              <div class="social-proof"><span>♥ 42</span><span>말 걸기 11</span><span>저장 18</span></div>
+            </article>
+
+            <article class="talk-card question-card">
+              <div class="post-person"><span class="avatar avatar-green">윤</span><p><b>윤서</b><small>가방·파우치 · 2분 전</small></p></div>
+              <span class="post-type">도와주세요</span>
+              <h3>자전거 출퇴근, 젖은 우산은 6L 슬링 어디에 넣나요?</h3>
+              <div class="inline-reply"><span class="avatar avatar-blue">준</span><p><b>준호</b> 저는 바깥 칸을 20% 비워둬요. 수납지도 보여드릴게요.</p></div>
+              <button type="button" data-open-post>답변 8개 이어보기 →</button>
+            </article>
+
+            <article class="talk-card pulse-card">
+              <span class="post-type">오늘의 물음 · 72명 참여</span>
+              <h3>당신의 Carry에서<br><mark>끝까지 남은 하나</mark>는?</h3>
+              <div class="floating-answers"><span>“결국 작은 펜.”</span><span>“낡은 손수건.”</span><span>“아버지의 지갑.”</span></div>
+              <button type="button" data-go="compose">내 대답 보태기 ＋</button>
+            </article>
+
+            <aside class="room-whisper whisper-one"><i></i><b>라이트 방</b> 26명이 빔 비교 중</aside>
+            <aside class="room-whisper whisper-two"><span>↳</span> 새 대화 <b>＋18</b></aside>
+          </div>
+        </section>
+      </div>
+
+      <section class="room-picker" aria-labelledby="room-title">
+        <header>
+          <div><span class="eyebrow">FIND YOUR PEOPLE</span><h2 id="room-title">무엇을 꺼내<br>이야기할까요?</h2></div>
+          <p>품목이 달라지면 궁금한 것도, 보여주고 싶은 것도 달라져요.<br>각자의 방식으로 놀고 있는 방에 들어가 보세요.</p>
+        </header>
+        <div class="room-list">
+          <button class="room-tile carry-room" type="button" data-room="carry">
+            <span class="room-meta"><i></i> 84명 이야기 중</span><span class="room-no">01</span>
+            <span class="room-visual carry-dots"><i></i><i></i><i></i><i></i><i></i></span>
+            <strong>전체 Carry</strong><small>구성과 선택의 이유를 한 장에</small><em>피드 들어가기 ↗</em>
+          </button>
+          <button class="room-tile light-room" type="button" data-room="light">
+            <span class="room-meta"><i></i> 26명 비교 중</span><span class="room-no">02</span>
+            <span class="room-visual beam-ring"><i></i></span>
+            <strong>라이트</strong><small>같은 조건의 빔과 사용 환경</small><em>피드 들어가기 ↗</em>
+          </button>
+          <button class="room-tile bag-room" type="button" data-room="bag">
+            <span class="room-meta"><i></i> 19개 지도 보는 중</span><span class="room-no">03</span>
+            <span class="room-visual pack-map"><i></i><i></i><i></i></span>
+            <strong>가방·파우치</strong><small>용량보다 꺼내는 순서로</small><em>피드 들어가기 ↗</em>
+          </button>
+          <button class="room-tile tool-room" type="button" data-room="tool">
+            <span class="room-meta"><i></i> 오늘 41번 해결</span><span class="room-no">04</span>
+            <span class="room-visual tool-log"><i>FIXED</i><i>37</i></span>
+            <strong>도구</strong><small>스펙보다 해결한 일로</small><em>피드 들어가기 ↗</em>
+          </button>
+          <button class="room-tile writing-room" type="button" data-room="writing">
+            <span class="room-meta"><i></i> 새 샘플 12개</span><span class="room-no">05</span>
+            <span class="room-visual writing-slip">가볍게,<br>매일 오래.</span>
+            <strong>필기구</strong><small>획과 종이, 손끝의 감각</small><em>피드 들어가기 ↗</em>
+          </button>
+        </div>
+        <p class="swipe-hint">옆으로 밀어 더 보기 →</p>
+      </section>
+    </section>
+
+    <section class="screen feed-screen" id="feed" data-screen="feed">
+      <aside class="feed-rail left-rail">
+        <button class="back-home" type="button" data-go="home">← 모든 Carry</button>
+        <p class="eyebrow">YOU ARE IN</p>
+        <h1 id="feed-room-title">전체 Carry</h1>
+        <p id="feed-room-copy">구성은 곧,<br>짧은 자기소개.</p>
+        <div class="room-members"><span class="avatar avatar-coral">민</span><span class="avatar avatar-blue">준</span><span class="avatar avatar-green">윤</span><span class="avatar avatar-yellow">솔</span><b id="feed-online">＋80</b></div>
+        <button class="join-button joined" type="button" data-join>✓ 들어온 방</button>
+        <nav class="room-nav" aria-label="Carry 방 선택">
+          <button class="active" type="button" data-room="carry"><span>01</span>전체 Carry</button>
+          <button type="button" data-room="light"><span>02</span>라이트</button>
+          <button type="button" data-room="bag"><span>03</span>가방·파우치</button>
+          <button type="button" data-room="tool"><span>04</span>도구</button>
+          <button type="button" data-room="writing"><span>05</span>필기구</button>
+        </nav>
+      </aside>
+
+      <section class="feed-stream">
+        <header class="mobile-room-head">
+          <button type="button" data-go="home">←</button><div><small>YOU ARE IN</small><b id="mobile-feed-title">전체 Carry</b></div><button type="button" data-room-menu>⌄</button>
+        </header>
+        <div class="feed-topline">
+          <div class="topic-tabs" role="tablist"><button class="active" type="button">지금</button><button type="button">인기</button><button type="button">오래 쓴</button><button type="button">질문</button></div>
+          <button class="filter-button" type="button" data-toast="상황, 무게, 사용 기간 필터를 열었어요.">필터 ≡</button>
+        </div>
+        <button class="prompt-banner" type="button" data-go="compose"><span class="avatar my-avatar">동</span><span><small>오늘의 물음</small><b id="daily-question">가장 자주 꺼낸 물건은 무엇인가요?</b></span><em>대답하기 ＋</em></button>
+
+        <div class="feed-list" id="feed-list"></div>
+        <button class="load-more" type="button" data-load-more>이야기 더 불러오기 ↓</button>
+      </section>
+
+      <aside class="feed-rail right-rail">
+        <section class="room-now">
+          <header><span><i></i> ROOM NOW</span><small>21:48</small></header>
+          <h2>사람들이 지금<br>꺼내놓은 이야기</h2>
+          <ul id="room-now-list">
+            <li><span class="avatar avatar-green">윤</span><p><b>윤서</b>가 수납지도를 펼쳤어요<small>방금 전</small></p></li>
+            <li><span class="avatar avatar-blue">준</span><p><b>준호</b>가 1년 기록을 남겼어요<small>3분 전</small></p></li>
+            <li><span class="avatar avatar-yellow">솔</span><p><b>솔</b>이 새 질문에 답했어요<small>8분 전</small></p></li>
+          </ul>
+        </section>
+        <section class="room-guide">
+          <span class="eyebrow">OUR PROMISE</span><h3>여기는 쇼룸보다<br>사용자의 방에 가까워요.</h3>
+          <p>협찬은 표시하고, 판매는 분리하고, 실사용의 작은 차이를 존중해요.</p>
+          <button type="button" data-toast="Pockets의 커뮤니티 약속을 열었어요.">우리의 약속 보기 →</button>
+        </section>
+      </aside>
+    </section>
+
+    <section class="screen compose-screen" id="compose" data-screen="compose">
+      <header class="compose-head">
+        <button type="button" data-go="feed">← 나가기</button>
+        <div><span class="eyebrow">OPEN YOUR POCKET</span><h1>내 Carry 펼치기</h1></div>
+        <button class="draft-button" type="button" data-toast="임시 저장했어요.">임시 저장</button>
+      </header>
+      <div class="compose-layout">
+        <ol class="compose-steps">
+          <li class="active"><span>01</span><b>방 고르기</b><small>무엇을 이야기할까요?</small></li>
+          <li><span>02</span><b>보여주기</b><small>품목에 맞는 방식으로</small></li>
+          <li><span>03</span><b>이야기</b><small>고른 이유와 사용 맥락</small></li>
+          <li><span>04</span><b>공개하기</b><small>피드에서 시작해요</small></li>
+        </ol>
+
+        <form class="composer" id="composer">
+          <section class="compose-block">
+            <span class="step-kicker">01 · 어느 방에 펼칠까요?</span>
+            <div class="compose-rooms" role="radiogroup" aria-label="게시할 Carry 방">
+              <button class="active" type="button" role="radio" aria-checked="true" data-compose-room="carry"><span>◎</span><b>전체 Carry</b><small>사진 태그</small></button>
+              <button type="button" role="radio" aria-checked="false" data-compose-room="light"><span>◉</span><b>라이트</b><small>빔 조건</small></button>
+              <button type="button" role="radio" aria-checked="false" data-compose-room="bag"><span>▤</span><b>가방·파우치</b><small>수납 지도</small></button>
+              <button type="button" role="radio" aria-checked="false" data-compose-room="tool"><span>✣</span><b>도구</b><small>해결 기록</small></button>
+              <button type="button" role="radio" aria-checked="false" data-compose-room="writing"><span>⌁</span><b>필기구</b><small>필기 샘플</small></button>
+            </div>
+          </section>
+
+          <section class="compose-block expression-block">
+            <span class="step-kicker">02 · <b id="expression-title">사진 위에 선택의 이유를 붙여보세요</b></span>
+            <div class="expression-ui" id="expression-ui"></div>
+          </section>
+
+          <section class="compose-block story-block">
+            <span class="step-kicker">03 · 이 Carry에 담긴 이야기는?</span>
+            <label class="title-field"><span>한 줄 제목</span><input id="post-title" type="text" maxlength="48" placeholder="예: 기계는 좋아하지만 주머니는 가볍게"></label>
+            <label class="story-field"><span>이야기</span><textarea id="post-story" rows="5" placeholder="어디에서, 왜 들고 다니는지 이야기해 주세요. 완벽한 리뷰가 아니어도 좋아요."></textarea></label>
+            <div class="context-chips"><span>상황</span><button type="button">＋ 출퇴근</button><button type="button">＋ 일상</button><button type="button">＋ 오래 쓴</button><button type="button">＋ 500g 아래</button></div>
+          </section>
+
+          <footer class="publish-bar">
+            <label><input type="checkbox" checked> 나중에 <b>기록</b>으로 이어갈 수 있게 저장</label>
+            <button class="publish-button" type="submit">전체 Carry 피드에 펼치기 ↗</button>
+          </footer>
+        </form>
+      </div>
+    </section>
+
+    <section class="screen detail-screen" id="detail" data-screen="detail">
+      <header class="detail-topbar"><button type="button" data-go="feed">← 전체 Carry로</button><span>POST · 2841</span><button type="button" data-toast="이 게시물을 보관함에 저장했어요.">저장 ♡</button></header>
+      <div class="detail-layout">
+        <article class="detail-post">
+          <div class="detail-author"><span class="avatar avatar-coral">민</span><p><b>민규 <i>생활 기술자</i></b><small>서울 · 방금 전 · 협찬 없음</small></p><button type="button" data-toast="민규 님을 팔로우했어요.">＋ 이 사람 궁금해요</button></div>
+          <h1>기계는 좋아하지만<br>주머니는 가볍게.</h1>
+          <p class="detail-lede">출퇴근길에 실제로 꺼내는 것만 남겼어요. 검정 사이 한 점의 주황은, 어두운 가방 안에서 빨리 찾기 위한 제 방식입니다.</p>
+          <figure class="tagged-carry">
+            <img src="../v2/assets/edc-flatlay.png" alt="민규의 출퇴근 EDC 7개 구성품">
+            <button class="item-pin pin-1 active" type="button" data-item="R10 Mini · 귀갓길에 주 4회 사용">1</button>
+            <button class="item-pin pin-2" type="button" data-item="무명 메모지 · 생각보다 영수증을 많이 적어요">2</button>
+            <button class="item-pin pin-3" type="button" data-item="4년 된 카드 지갑 · 바꿀 이유를 아직 못 찾았어요">3</button>
+            <button class="item-pin pin-4" type="button" data-item="멀티툴 · 직접 고쳐가며 1,481일째">4</button>
+            <figcaption id="item-caption"><b>01 · R10 MINI</b><span>귀갓길에 주 4회 사용</span></figcaption>
+          </figure>
+          <dl class="carry-facts"><div><dt>472g</dt><dd>총 무게</dd></div><div><dt>7개</dt><dd>구성품</dd></div><div><dt>4.2년</dt><dd>평균 사용</dd></div><div><dt>실사용</dt><dd>직접 구매</dd></div></dl>
+          <div class="detail-actions"><button type="button" data-react>♡ <span>공감 42</span></button><button type="button" data-focus-comment>↳ 이야기 11</button><button type="button" data-toast="링크를 복사했어요.">↗ 나누기</button><button type="button" data-convert>⌁ 기록으로 남기기</button></div>
+          <section class="story-update"><span class="eyebrow">WHY IT STAYED</span><h2>“더 좋은 물건보다,<br>손이 먼저 가는 물건.”</h2><p>작년에 600g을 넘긴 뒤부터 매주 일요일에 한 번도 쓰지 않은 물건을 꺼냈습니다. 보조배터리와 큰 파우치가 빠지고, 작은 라이트와 종이 메모가 남았어요. 다음 달에는 이어폰 사용 횟수를 기록해보려 합니다.</p><time>2026. 09. 06 · DAY 214</time></section>
+        </article>
+
+        <aside class="comments-panel">
+          <header><div><span class="eyebrow">THE CONVERSATION</span><h2>이야기 <b id="comment-count">11</b></h2></div><button type="button" data-toast="좋은 대화부터 정렬하고 있어요.">공감순⌄</button></header>
+          <div class="comments" id="comments">
+            <article><span class="avatar avatar-yellow">해</span><div><header><b>해솔 <i>산업 디자이너</i></b><time>방금 전</time></header><p>저도 검정 위주인데 한 점만 색을 넣어요. 주황 카라비너가 먼저였나요, 펜이 먼저였나요?</p><footer><button type="button" data-react>♡ 공감 12</button><button type="button" data-focus-comment>답글</button></footer><div class="nested"><span class="avatar avatar-coral">민</span><p><b>민규</b> 카라비너부터였어요. 찾기 쉬워서 골랐는데 어느새 제 색이 됐네요.</p></div></div></article>
+            <article><span class="avatar avatar-blue">준</span><div><header><b>준호 <i>대학원생</i></b><time>6분 전</time></header><p>472g을 유지하는 자기 규칙이 궁금해요. 저는 보조배터리를 넣는 순간 늘 600g을 넘습니다.</p><footer><button type="button" data-react>♡ 나도 궁금해 8</button><button type="button" data-focus-comment>답글</button></footer></div></article>
+            <article><span class="avatar avatar-green">리</span><div><header><b>리원 <i>바리스타</i></b><time>11분 전</time></header><p>오래 쓴 물건이 새 물건보다 많이 보여서 좋네요. 멀티툴의 4년 사용기도 따로 보고 싶어요.</p><footer><button type="button" data-react>♡ 공감 19</button><button type="button" data-focus-comment>답글</button></footer></div></article>
+          </div>
+          <form class="comment-box" id="comment-form"><span class="avatar my-avatar">동</span><label><span class="sr-only">댓글 입력</span><textarea id="comment-input" rows="3" placeholder="민규의 Carry에 말을 걸어보세요"></textarea></label><button type="submit">보내기 ↑</button></form>
+        </aside>
+      </div>
+    </section>
+
+    <section class="screen profile-screen" id="profile" data-screen="profile">
+      <header class="profile-hero">
+        <div class="profile-person"><span class="profile-avatar">동</span><div><span class="eyebrow">POCKETS MEMBER · 0148</span><h1>동규의 주머니</h1><p>작고 오래 쓰는 물건을 좋아합니다.<br>서울에서 만들고, 걷고, 기록해요.</p></div></div>
+        <div class="profile-actions"><button type="button" data-toast="프로필 편집 화면을 열었어요.">프로필 다듬기</button><button type="button" data-toast="내 Pockets 링크를 복사했어요.">↗ 공유</button></div>
+        <dl><div><dt>12</dt><dd>Carry</dd></div><div><dt>38</dt><dd>기록</dd></div><div><dt>214</dt><dd>함께한 날</dd></div><div><dt>1.8kg</dt><dd>덜어낸 무게</dd></div></dl>
+      </header>
+      <div class="profile-body">
+        <aside class="identity-shelf">
+          <section><span class="eyebrow">MY ROOMS</span><div class="my-rooms"><span>전체 Carry <b>12</b></span><span>필기구 <b>9</b></span><span>도구 <b>7</b></span></div></section>
+          <section><span class="eyebrow">MY RULES</span><blockquote>“주 1회도 쓰지 않으면<br>한 달은 집에 둔다.”</blockquote></section>
+          <section><span class="eyebrow">PEOPLE I MET</span><div class="member-chain compact"><span class="avatar avatar-coral">민</span><span class="avatar avatar-blue">준</span><span class="avatar avatar-green">윤</span><span class="avatar avatar-yellow">솔</span><span class="avatar avatar-ink">＋28</span></div></section>
+        </aside>
+        <section class="archive">
+          <header><div class="archive-tabs"><button class="active" type="button" data-archive="records">이어 쓰는 기록 38</button><button type="button" data-archive="posts">피드 게시물 12</button><button type="button" data-archive="saved">보관함</button></div><button type="button" data-toast="기록을 최신 업데이트순으로 보고 있어요.">최신 업데이트⌄</button></header>
+          <div class="archive-grid" id="archive-grid"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <nav class="mobile-nav" aria-label="모바일 메뉴">
+    <button class="active" type="button" data-go="home"><span>⌂</span>모임</button>
+    <button type="button" data-go="feed"><span>◎</span>피드</button>
+    <button class="mobile-make" type="button" data-go="compose" aria-label="내 Carry 작성">＋</button>
+    <button type="button" data-go="profile"><span>⌁</span>기록</button>
+    <button type="button" data-go="profile"><span>○</span>나</button>
+  </nav>
+
+  <div class="room-drawer" id="room-drawer" aria-hidden="true">
+    <button class="drawer-backdrop" type="button" data-close-drawer aria-label="닫기"></button>
+    <div><header><b>어느 방으로 갈까요?</b><button type="button" data-close-drawer>×</button></header><button type="button" data-room="carry">전체 Carry <span>84명 →</span></button><button type="button" data-room="light">라이트 <span>26명 →</span></button><button type="button" data-room="bag">가방·파우치 <span>19명 →</span></button><button type="button" data-room="tool">도구 <span>41개 기록 →</span></button><button type="button" data-room="writing">필기구 <span>12개 샘플 →</span></button></div>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

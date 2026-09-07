@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#efede7">
+  <meta name="description" content="매일 들고 다니는 물건과 그 이유를 나누는 EDC 커뮤니티 시안">
+  <title>POCKET — Everyday Carry Community</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Gowun+Dodum&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="POCKET 홈">
+      <span class="brand-mark">P/</span>
+      <span>POCKET</span>
+      <sup>beta</sup>
+    </a>
+    <nav class="main-nav" aria-label="주 메뉴">
+      <a class="active" href="#feed">피드</a>
+      <a href="#explore">키트 탐색</a>
+      <a href="#lab">실험실</a>
+      <a href="#clubs">클럽</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" aria-label="검색 열기" id="searchOpen">⌕</button>
+      <button class="avatar" aria-label="내 프로필">DY</button>
+      <button class="primary small" data-open-composer>+ 포켓 덤프</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> 1,284명이 지금 주머니를 정리하는 중</p>
+        <h1 id="hero-title">매일 드는 것엔<br><em>이유</em>가 있다.</h1>
+        <p class="hero-lead">멋진 장비보다, 나에게 맞는 장비. 오늘의 주머니를 펼치고 서로의 작은 선택을 구경하세요.</p>
+        <div class="hero-actions">
+          <button class="primary" data-open-composer>내 EDC 펼치기 <span>↗</span></button>
+          <button class="text-button" id="scrollFeed">일단 구경할래요 <span>↓</span></button>
+        </div>
+        <div class="hero-tags" aria-label="인기 주제">
+          <span>지금 많이 보는</span>
+          <button data-filter="출퇴근">#출퇴근</button>
+          <button data-filter="3L이하">#3L이하</button>
+          <button data-filter="천그램컷">#천그램컷</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/edc-flatlay.png" alt="손전등, 펜, 노트, 지갑, 이어폰, 멀티툴 등이 놓인 일상 휴대품 플랫레이">
+        <div class="photo-meta">
+          <span>POCKET DUMP 0824</span>
+          <span>SEOUL · DESIGNER</span>
+        </div>
+        <button class="gear-pin pin-light" aria-label="손전등 정보" data-tip="R10 MINI · 56g"><span></span></button>
+        <button class="gear-pin pin-wallet" aria-label="지갑 정보" data-tip="CARD WALLET · 42g"><span></span></button>
+        <button class="gear-pin pin-tool" aria-label="멀티툴 정보" data-tip="COMPACT TOOL · 98g"><span></span></button>
+        <div class="hero-caption">
+          <span class="mini-avatar olive">진</span>
+          <div><strong>비 오는 날의 출근 키트</strong><small>진 · 2시간 전 · 총 612g</small></div>
+          <button class="save-button" aria-label="저장">＋</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="prompt-strip" aria-label="오늘의 주제">
+      <div class="wrap strip-inner">
+        <span class="label">TODAY'S PROMPT</span>
+        <strong>“가장 오래 살아남은 물건은?”</strong>
+        <div class="prompt-faces" aria-hidden="true"><i>해</i><i>조</i><i>우</i><i>림</i><i>+82</i></div>
+        <button class="text-button" data-open-composer>내 물건 자랑하기 →</button>
+      </div>
+    </section>
+
+    <section class="community wrap" id="feed">
+      <div class="feed-column">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">COMMUNITY FEED</p>
+            <h2>남의 주머니 구경하기</h2>
+          </div>
+          <div class="view-switch" role="group" aria-label="피드 보기 방식">
+            <button class="active" data-view="grid" aria-label="카드 보기">▦</button>
+            <button data-view="list" aria-label="목록 보기">☷</button>
+          </div>
+        </div>
+        <div class="filters" role="tablist" aria-label="피드 필터">
+          <button class="active" data-feed-filter="all">발견</button>
+          <button data-feed-filter="today">오늘의 EDC</button>
+          <button data-feed-filter="used">실사용기</button>
+          <button data-feed-filter="question">물어봐요</button>
+          <button data-feed-filter="light">가볍게</button>
+        </div>
+
+        <div class="feed-grid" id="feedGrid">
+          <article class="post photo-post wide" data-kind="today">
+            <div class="post-image crop-one">
+              <img src="assets/edc-flatlay.png" alt="출근용 EDC 플랫레이">
+              <span class="context-chip">WORK EDC</span>
+              <button class="image-count">＋ 9 items</button>
+            </div>
+            <div class="post-body">
+              <div class="author-line"><span class="mini-avatar rust">민</span><div><strong>민규</strong><small>서울 · 자전거 출퇴근</small></div><button>•••</button></div>
+              <h3>비 맞아도 걱정 없는, 1kg 아래 출근 구성</h3>
+              <p>6L 슬링에서 꼭 쓰는 것만 남겼습니다. 라이트는 터널 구간 때문에 포기 못해요.</p>
+              <div class="item-list"><span>라이트 56g</span><span>멀티툴 98g</span><span>파우치 180g</span><span>+6</span></div>
+              <div class="post-footer"><button class="react-button">♡ <b>128</b></button><button>◯ 24</button><span>저장 39</span></div>
+            </div>
+          </article>
+
+          <article class="post question-post" data-kind="question">
+            <div class="card-kicker"><span class="mini-avatar blue">율</span><span>율무 · 첫 질문</span><time>18분 전</time></div>
+            <span class="big-quote">Q.</span>
+            <h3>3L 슬링, 우산까지 넣으면 너무 빡빡할까요?</h3>
+            <p>지갑 / 보조배터리 / 버즈 / A6 노트 / 작은 파우치 구성입니다.</p>
+            <div class="answer-preview"><span>광</span><p><strong>지퍼 길이도 봐야 해요.</strong><br>부피보다 입구가 좁아서 불편할 수…</p></div>
+            <button class="card-action">답변 17개 읽기 <span>→</span></button>
+          </article>
+
+          <article class="post debate-post" data-kind="light">
+            <p class="eyebrow">POCKET DEBATE · 06</p>
+            <h3>백업 라이트,<br>과하다 <em>vs</em> 필요하다</h3>
+            <div class="poll" data-voted="false">
+              <button data-poll="58"><span>과하다</span><b>58%</b></button>
+              <button data-poll="42"><span>필요하다</span><b>42%</b></button>
+            </div>
+            <p class="poll-note">412명 참여 · 투표하면 댓글이 열려요</p>
+          </article>
+
+          <article class="post used-post wide" data-kind="used">
+            <div class="used-visual">
+              <span class="wear-ring one"></span><span class="wear-ring two"></span>
+              <div class="flashlight-shape"><i></i><i></i><i></i></div>
+              <span class="age-label">1,147 DAYS<br>IN POCKET</span>
+            </div>
+            <div class="post-body">
+              <p class="eyebrow">USED &amp; LOVED</p>
+              <h3>3년 동안 매일. 코팅은 벗겨졌지만 버튼은 더 좋아졌다.</h3>
+              <p>처음엔 스펙 때문에 샀는데, 지금 남은 이유는 한 손에 익은 UI. 배터리는 두 번 바꿨고 클립은 한 번 폈습니다.</p>
+              <div class="wear-stats"><span><b>1,147</b>사용일</span><span><b>2×</b>수리</span><span><b>56g</b>무게</span></div>
+              <div class="post-footer"><button class="react-button">♡ <b>203</b></button><button>◯ 38</button><span>#손전등</span></div>
+            </div>
+          </article>
+
+          <article class="post compare-post" data-kind="question">
+            <p class="eyebrow">GEAR LAB</p>
+            <h3>3L와 6L 사이에서<br>아직도 고민 중이라면</h3>
+            <div class="bag-compare" aria-hidden="true"><div class="bag small-bag"><span>3L</span></div><b>VS</b><div class="bag large-bag"><span>6L</span></div></div>
+            <div class="compare-bars"><span>가벼움<i style="--score:82%"></i></span><span>접근성<i style="--score:68%"></i></span><span>수납력<i style="--score:91%"></i></span></div>
+            <button class="card-action" id="openBalancer">내 물건 넣어 비교하기 <span>↗</span></button>
+          </article>
+
+          <article class="post micro-post" data-kind="light">
+            <div class="card-kicker"><span class="mini-avatar yellow">해</span><span>해준 · 버스 안</span><time>4분 전</time></div>
+            <h3>오늘 결국 안 쓴 것</h3>
+            <div class="unused-item"><span>▰</span><div><strong>20,000mAh 배터리</strong><small>나흘째 0회 사용 · 342g</small></div></div>
+            <p>내일은 두고 나갈까요?</p>
+            <div class="quick-replies"><button>빼자 <b>64</b></button><button>그래도 챙겨 <b>21</b></button></div>
+          </article>
+        </div>
+        <button class="load-more" id="loadMore"><span>더 깊이 들어가기</span><small>다음 12개의 포켓</small></button>
+      </div>
+
+      <aside class="side-column">
+        <section class="side-card mission-card">
+          <div class="side-title"><span>WEEKLY MISSION</span><b>D−3</b></div>
+          <div class="mission-number">07</div>
+          <h3>한 달 동안<br>바꾸지 않은 구성</h3>
+          <p>새 물건 없이 지금의 EDC를 보여주세요.</p>
+          <div class="mission-progress"><i></i></div>
+          <div class="mission-meta"><span>238명 참여</span><span>목표 300</span></div>
+          <button class="secondary full" data-open-composer>미션 참여하기</button>
+        </section>
+
+        <section class="side-card kit-card" id="lab">
+          <div class="side-title"><span>MY POCKET</span><button id="openBalancerAside">편집</button></div>
+          <h3>오늘의 주머니 밸런스</h3>
+          <div class="balance-ring" style="--score:76"><strong>76</strong><small>BALANCED</small></div>
+          <div class="balance-axis"><span><i style="width:84%"></i>실용</span><span><i style="width:62%"></i>가벼움</span><span><i style="width:73%"></i>대비</span></div>
+          <p class="tip">보조배터리를 작은 것으로 바꾸면 <b>−184g</b></p>
+        </section>
+
+        <section class="side-card club-card" id="clubs">
+          <div class="side-title"><span>ACTIVE CLUBS</span><button>모두 보기</button></div>
+          <a href="#"><span class="club-icon orange">☀</span><span><strong>라이트 야간반</strong><small>방금 새 글 · 892명</small></span><b>→</b></a>
+          <a href="#"><span class="club-icon green">㎏</span><span><strong>1kg 아래로</strong><small>12분 전 · 544명</small></span><b>→</b></a>
+          <a href="#"><span class="club-icon violet">✎</span><span><strong>쓰는 사람들</strong><small>38분 전 · 326명</small></span><b>→</b></a>
+        </section>
+
+        <section class="safety-note">
+          <span>ⓘ</span>
+          <p><strong>좋은 장비보다 안전한 사용.</strong><br>칼·멀티툴 등은 지역과 장소별 휴대 규정을 먼저 확인하세요.</p>
+          <a href="#">안전 가이드 →</a>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner"><div class="brand"><span class="brand-mark">P/</span><span>POCKET</span></div><p>Carry less. Live more.<br>당신의 매일을 위한 EDC 커뮤니티.</p><div><a href="#">소개</a><a href="#">커뮤니티 원칙</a><a href="#">안전 가이드</a><a href="#">피드백</a></div><small>CONCEPT © 2026</small></div>
+  </footer>
+
+  <button class="floating-compose" data-open-composer><span>＋</span> 내 포켓 펼치기</button>
+
+  <dialog id="composer">
+    <form method="dialog" class="composer-panel">
+      <div class="modal-head"><div><p class="eyebrow">NEW POCKET DUMP</p><h2>오늘 뭘 들고 나왔나요?</h2></div><button value="cancel" aria-label="닫기">×</button></div>
+      <label class="upload-zone"><input type="file" accept="image/*"><span>＋</span><strong>사진을 올려주세요</strong><small>플랫레이가 아니어도 괜찮아요. 진짜 주머니면 충분합니다.</small></label>
+      <label>한 줄 설명<input type="text" placeholder="예: 비 오는 날의 가벼운 출근 키트"></label>
+      <div class="form-row"><label>상황<select><option>출퇴근</option><option>업무</option><option>여행</option><option>캠핑</option><option>말 그대로 매일</option></select></label><label>총 무게<input type="text" placeholder="모르면 비워두세요"></label></div>
+      <div class="modal-foot"><span>사진 속 물건 목록은 다음 단계에서 추가해요.</span><button class="primary" value="default" id="fakePublish">다음 단계 →</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="balancer">
+    <form method="dialog" class="balancer-panel">
+      <div class="modal-head"><div><p class="eyebrow">POCKET BALANCER</p><h2>무게를 줄여도 마음은 든든하게.</h2></div><button value="cancel" aria-label="닫기">×</button></div>
+      <div class="balancer-layout">
+        <div class="gear-checklist" id="gearChecklist">
+          <label><input type="checkbox" data-weight="210" data-ready="8" checked><span>휴대폰<small>210g · 필수</small></span><b>고정</b></label>
+          <label><input type="checkbox" data-weight="342" data-ready="16" checked><span>보조배터리 20K<small>342g · 4일째 미사용</small></span><b>−</b></label>
+          <label><input type="checkbox" data-weight="56" data-ready="19" checked><span>미니 라이트<small>56g · 주 3회 사용</small></span><b>−</b></label>
+          <label><input type="checkbox" data-weight="98" data-ready="25" checked><span>컴팩트 멀티툴<small>98g · 주 1회 사용</small></span><b>−</b></label>
+          <label><input type="checkbox" data-weight="42" data-ready="7" checked><span>카드 지갑<small>42g · 필수</small></span><b>고정</b></label>
+          <label><input type="checkbox" data-weight="118" data-ready="12"><span>A6 노트 + 펜<small>118g · 추가 후보</small></span><b>＋</b></label>
+        </div>
+        <div class="balance-result"><span>TOTAL WEIGHT</span><strong id="totalWeight">748<small>g</small></strong><div class="load-gauge"><i id="loadGauge"></i></div><p id="loadMessage">조금 묵직하지만 대비력이 좋아요.</p><div><span>대비력</span><b id="readyScore">75</b></div><div><span>아이템</span><b id="itemCount">5</b></div></div>
+      </div>
+      <div class="modal-foot"><span>숫자는 선택을 돕는 힌트일 뿐, 정답은 내 생활에 있어요.</span><button class="primary" value="default">이 구성 저장하기</button></div>
+    </form>
+  </dialog>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

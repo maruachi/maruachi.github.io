@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f0e8">
+  <meta name="description" content="품목마다 다른 방식으로 취향과 사용 경험을 나누는 EDC 커뮤니티 UI 시안">
+  <title>CARRY/FORM — EDC Community Concept v2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Noto+Sans+KR:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="CARRY FORM 홈">
+      <span class="brand-box">C/F</span>
+      <span>CARRY<br>FORM</span>
+    </a>
+    <nav class="main-nav" aria-label="주 메뉴">
+      <a class="active" href="#rooms">라운지</a>
+      <a href="#today">오늘의 기록</a>
+      <a href="#principle">아카이브</a>
+    </nav>
+    <div class="top-actions">
+      <button class="search-button" id="searchButton" aria-label="검색">검색 <span>⌘ K</span></button>
+      <button class="profile-button" aria-label="내 프로필">DG</button>
+      <button class="solid-button small" data-open-compose>내 것 펼치기</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="intro shell">
+      <div class="intro-index mono">COMMUNITY INDEX / 02</div>
+      <div class="intro-copy">
+        <p class="overline">EVERYDAY CARRY, EVERYDAY CHARACTER</p>
+        <h1>우리는 물건으로<br><em>말하는 사람들.</em></h1>
+        <p class="intro-lead">무엇을 샀는지보다 어떻게 들고, 쓰고, 길들였는지. 품목마다 가장 재미있는 방식으로 당신의 생활을 펼쳐보세요.</p>
+        <div class="intro-actions">
+          <button class="solid-button" data-open-compose>나의 첫 기록 만들기 <b>↗</b></button>
+          <a href="#rooms">방부터 둘러보기 ↓</a>
+        </div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-head mono"><span>LIVE SIGNAL</span><i></i><span>SEOUL 21:42</span></div>
+        <blockquote>“무광 블랙만 모은 게 아니라,<br>쓰다 보니 이게 내가 됐어요.”</blockquote>
+        <div class="signal-user"><span class="avatar coral">민</span><div><strong>@slowwear</strong><small>도시 출퇴근 · 6년째 EDC</small></div><b>→</b></div>
+        <div class="signal-tags"><span>#검정</span><span>#사용흔적</span><span>#500g아래</span></div>
+      </div>
+    </section>
+
+    <section class="room-section" id="rooms">
+      <div class="shell room-shell">
+        <div class="section-head">
+          <div><p class="overline">CHOOSE A ROOM</p><h2>공감하는 방식부터 다르게.</h2></div>
+          <p>품목을 고르면 그 물건을 가장 잘 이야기할 수 있는<br>도구와 사람들이 기다리고 있어요.</p>
+        </div>
+
+        <div class="room-tabs" role="tablist" aria-label="품목별 커뮤니티">
+          <button class="active" role="tab" aria-selected="true" data-room="carry"><span>01</span><b>전체 캐리</b><small>나를 이루는 조합</small></button>
+          <button role="tab" aria-selected="false" data-room="light"><span>02</span><b>라이트</b><small>빛으로 비교하기</small></button>
+          <button role="tab" aria-selected="false" data-room="bag"><span>03</span><b>가방·파우치</b><small>공간으로 설명하기</small></button>
+          <button role="tab" aria-selected="false" data-room="tool"><span>04</span><b>도구</b><small>해결한 일로 증명하기</small></button>
+          <button role="tab" aria-selected="false" data-room="write"><span>05</span><b>필기구</b><small>손끝의 감각 나누기</small></button>
+        </div>
+
+        <div class="room-stage" id="roomStage" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="today shell" id="today">
+      <div class="today-head">
+        <div><p class="overline">TODAY'S EXPRESSIONS</p><h2>오늘, 이렇게 놀고 있어요.</h2></div>
+        <div class="ticker mono"><i></i> 24시간 동안 186개의 기록</div>
+      </div>
+      <div class="play-grid">
+        <article class="play-card challenge-card">
+          <div class="card-top mono"><span>WEEKLY PROMPT 09</span><span>D−2</span></div>
+          <div class="big-number">07</div>
+          <h3>닳아서 더 좋아진<br>일곱 번째 물건</h3>
+          <p>새것일 때보다 지금이 더 ‘내 것’ 같은 물건을 보여주세요.</p>
+          <div class="face-stack"><span>윤</span><span>서</span><span>범</span><span>혜</span><b>+94</b></div>
+          <button class="dark-button" data-open-compose>내 흔적 보태기 →</button>
+        </article>
+
+        <article class="play-card identity-card">
+          <div class="card-top mono"><span>IDENTITY MATCH</span><span>02:18</span></div>
+          <div class="match-words"><span>가볍게</span><span>고쳐 쓰는</span><span>무채색</span></div>
+          <h3>나와 취향은 닮고<br>직업은 다른 사람</h3>
+          <div class="match-person"><span class="avatar blue">재</span><div><strong>재영 · 무대 기술자</strong><small>공통 취향 86% · 공통 장비 3</small></div></div>
+          <div class="match-meter"><i></i></div>
+          <button class="line-button" id="shuffleMatch">다른 사람 만나기 ↻</button>
+        </article>
+
+        <article class="play-card verdict-card">
+          <div class="card-top mono"><span>ONE-LINE VERDICT</span><span>318 VOTES</span></div>
+          <h3>“매일 든다”의 기준은?</h3>
+          <div class="verdict-options">
+            <button data-vote="44"><span>주 5일이면 매일</span><b>44%</b></button>
+            <button data-vote="31"><span>상황이 맞을 때면 충분</span><b>31%</b></button>
+            <button data-vote="25"><span>진짜 365일이어야 함</span><b>25%</b></button>
+          </div>
+          <p class="mono verdict-note">투표하면 이유 72개가 열립니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="principle" id="principle">
+      <div class="shell principle-inner">
+        <p class="overline">COMMUNITY PRINCIPLE</p>
+        <div class="principle-line"><span>01</span><h2>가격보다 <em>선택의 이유.</em></h2></div>
+        <div class="principle-line"><span>02</span><h2>스펙보다 <em>사용한 시간.</em></h2></div>
+        <div class="principle-line"><span>03</span><h2>정답보다 <em>서로 다른 생활.</em></h2></div>
+        <div class="principle-foot"><p>협찬은 명확하게, 거래는 별도의 규칙으로,<br>위험 장비는 지역과 장소의 법규를 먼저.</p><button class="light-button">우리의 약속 읽기 →</button></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <div class="brand"><span class="brand-box">C/F</span><span>CARRY<br>FORM</span></div>
+    <p>물건 사이에서 사람을 발견하는 EDC 커뮤니티.</p>
+    <div><a href="#rooms">품목별 방</a><a href="#principle">커뮤니티 원칙</a><a href="#">안전 가이드</a></div>
+    <span class="mono">CONCEPT V2 / 2026</span>
+  </footer>
+
+  <button class="mobile-compose solid-button" data-open-compose>＋ 내 것 펼치기</button>
+
+  <dialog id="composeDialog">
+    <form method="dialog" class="composer">
+      <div class="dialog-head"><div><p class="overline">START WITH A THING</p><h2>무엇을 이야기하고 싶나요?</h2></div><button value="cancel" aria-label="닫기">×</button></div>
+      <p class="dialog-lead">품목을 고르면 딱 맞는 기록 형식을 준비해드려요.</p>
+      <div class="compose-types">
+        <button type="button" data-compose-type="carry"><b>전체 캐리</b><span>사진 위에 구성품과 선택 이유를 표시해요.</span><i>→</i></button>
+        <button type="button" data-compose-type="light"><b>라이트</b><span>빔샷, 밝기, 사용 환경을 함께 올려요.</span><i>→</i></button>
+        <button type="button" data-compose-type="bag"><b>가방·파우치</b><span>수납 위치와 꺼내는 순서를 그려요.</span><i>→</i></button>
+        <button type="button" data-compose-type="tool"><b>도구</b><span>이 도구로 해결한 일을 기록해요.</span><i>→</i></button>
+        <button type="button" data-compose-type="write"><b>필기구</b><span>필기 샘플과 손에 닿는 감각을 남겨요.</span><i>→</i></button>
+      </div>
+      <div class="dialog-foot mono">STEP 1 / 5 · 품목 선택</div>
+    </form>
+  </dialog>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

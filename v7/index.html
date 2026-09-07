@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eeefed">
+  <title>Pockets · v7 Design board</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="studio-header">
+    <a class="studio-brand" href="#home"><span class="pocket-mark"></span>Pockets <span class="version">v7</span></a>
+    <span class="studio-description">Community / UI design exploration</span>
+    <div class="view-controls" aria-label="보드 배율"><button data-zoom="-" aria-label="축소">−</button><output id="zoom-value">75%</output><button data-zoom="+" aria-label="확대">＋</button><button id="fit">맞춤</button></div>
+  </header>
+  <aside class="studio-sidebar">
+    <p class="overline">SCREENS <span>07</span></p>
+    <nav id="screen-nav" aria-label="시안 화면"></nav>
+    <div class="design-note"><span class="overline">DESIGN DIRECTION</span><h2>물건에서 시작해,<br>사람으로 이어지는.</h2><p>각자의 취향을 꺼내놓고<br>사용한 이야기를 나누는 커뮤니티.</p><div class="swatches"><i></i><i></i><i></i></div><small>Paper · Ink · Forest</small></div>
+    <p class="sidebar-footer">POCKETS / SEPTEMBER 2026<br>인터랙티브 HTML 시안 · 예시 콘텐츠</p>
+  </aside>
+  <main class="workspace">
+    <header class="board-heading"><div><p class="overline" id="screen-number"></p><h1 id="screen-title"></h1><p id="screen-description"></p></div><span class="board-badge">DESKTOP + MOBILE</span></header>
+    <div class="board-scroll"><div class="artboards" id="artboards"></div></div>
+    <p class="workspace-note">화면 안의 카테고리와 글, 작성 버튼을 눌러 흐름을 살펴보세요. 등록한 글과 댓글은 현재 탭에서만 유지됩니다.</p>
+  </main>
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

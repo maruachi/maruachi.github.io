@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2efdf">
+  <meta name="description" content="물건으로 나를 말하고, 쓰는 방식으로 연결되는 EDC 커뮤니티 시안">
+  <title>POCKET CLUB — EDC Community Concept v3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Noto+Sans+KR:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Pocket Club 홈"><span>PC</span><b>POCKET<br>CLUB</b></a>
+    <nav aria-label="주 메뉴">
+      <a class="active" href="#feed">모두의 캐리</a>
+      <a href="#clubrooms">품목별 방</a>
+      <a href="#prompt">오늘의 주제</a>
+    </nav>
+    <div class="header-actions">
+      <button class="quiet-button" id="searchButton">찾기 <kbd>⌘ K</kbd></button>
+      <button class="round-profile">김</button>
+      <button class="ink-button compact" data-compose>내 주머니 열기 ↗</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><i></i> 128 CARRIERS HERE NOW</p>
+        <h1>각자의 주머니에서,<br><em>우리 얘기가 시작된다.</em></h1>
+        <p class="hero-lead">매일 손이 가는 물건에는 그 사람의 생활이 묻어납니다.<br>오늘의 구성을 펼치고, 닮은 취향 옆에 앉아보세요.</p>
+        <div class="hero-actions">
+          <button class="ink-button" data-compose>오늘의 캐리 올리기 <span>＋</span></button>
+          <a href="#clubrooms">내 취향의 방 찾기 ↓</a>
+        </div>
+      </div>
+
+      <aside class="now-board" aria-label="지금 커뮤니티 활동">
+        <div class="board-head"><b>지금, 클럽에서는</b><span class="live"><i></i> LIVE</span></div>
+        <ol class="activity-list">
+          <li><span class="avatar apricot">해</span><p><b>해솔</b>님이 <strong>주황 한 점 캐리</strong>를 펼쳤어요.<small>방금 전 · 전체 캐리</small></p><span>↗</span></li>
+          <li><span class="avatar blue">진</span><p><b>진우 외 8명</b>이 <strong>웜빔 vs 뉴트럴</strong>에 답했어요.<small>2분 전 · 라이트 방</small></p><span>09</span></li>
+          <li><span class="avatar lime">윤</span><p><b>윤</b>님의 6L 수납지도에 새 팁이 달렸어요.<small>5분 전 · 가방·파우치 방</small></p><span>↗</span></li>
+        </ol>
+        <div class="people-strip">
+          <div class="facepile"><span>민</span><span>서</span><span>우</span><span>도</span><span>＋</span></div>
+          <p><b>37명</b>이 지금 자기 구성을<br>정리하고 있어요.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="clubroom-section" id="clubrooms">
+      <div class="section-intro">
+        <div><p class="eyebrow">FIND YOUR PEOPLE</p><h2>같은 물건도,<br>나누는 재미는 다르니까.</h2></div>
+        <p>품목의 언어에 맞춘 놀이 도구가 있어요.<br>구경하다 끼어들어도 좋고, 오래 써온 팁을 놓고 가도 좋아요.</p>
+      </div>
+
+      <div class="room-rail" role="tablist" aria-label="품목별 커뮤니티 방">
+        <button class="room-tab active" role="tab" aria-selected="true" data-room="carry"><span>01</span><b>전체 캐리</b><small><i></i> 84명 대화 중</small></button>
+        <button class="room-tab" role="tab" aria-selected="false" data-room="light"><span>02</span><b>라이트</b><small><i></i> 26명 빔 비교 중</small></button>
+        <button class="room-tab" role="tab" aria-selected="false" data-room="bag"><span>03</span><b>가방·파우치</b><small><i></i> 19개 수납 지도</small></button>
+        <button class="room-tab" role="tab" aria-selected="false" data-room="tool"><span>04</span><b>도구</b><small><i></i> 오늘 41번 해결</small></button>
+        <button class="room-tab" role="tab" aria-selected="false" data-room="write"><span>05</span><b>필기구</b><small><i></i> 12개 필기 샘플</small></button>
+      </div>
+
+      <div class="room-stage" id="roomStage" aria-live="polite"></div>
+
+      <section class="room-posts" aria-labelledby="roomPostsTitle">
+        <header class="room-posts-head">
+          <div><p class="eyebrow" id="roomPostsLabel">INSIDE THE ROOM</p><h3 id="roomPostsTitle">전체 캐리 방의 새 이야기</h3></div>
+          <div class="post-view-options" aria-label="게시글 정렬"><button class="active">새 대화</button><button>많이 공감한</button></div>
+        </header>
+        <div class="room-question" id="roomQuestion"></div>
+        <div class="room-post-grid" id="roomPostGrid" aria-live="polite"></div>
+        <button class="load-posts" id="loadPosts">이 방의 이야기 더 보기 <span>↓</span></button>
+      </section>
+    </section>
+
+    <section class="feed-section" id="feed">
+      <div class="feed-title">
+        <div><p class="eyebrow">THE CLUB, TODAY</p><h2>오늘 여기 모인 이유들.</h2></div>
+        <div class="filter-pills"><button class="active">지금 뜨는</button><button>새로 온</button><button>오래 쓴</button></div>
+      </div>
+
+      <div class="community-grid">
+        <article class="prompt-card" id="prompt">
+          <div class="card-meta"><span>오늘의 주제 · 09/05</span><span>답변 72</span></div>
+          <p class="scribble">TODAY'S<br>POCKET<br>QUESTION!</p>
+          <h3>끝까지 남겨둘<br>단 하나는?</h3>
+          <p>하나만 고르고, 그 물건이 당신 곁에 남은 이유를 들려주세요.</p>
+          <div class="mini-faces"><span>재</span><span>리</span><span>하</span><b>＋69</b></div>
+          <button class="wide-button" data-answer>내 답 놓고 가기 →</button>
+        </article>
+
+        <article class="talk-card">
+          <div class="person"><span class="avatar blue">소</span><div><b>소은 · 북 디자이너</b><small>필기구 방 · 18분 전</small></div><button aria-label="더보기">•••</button></div>
+          <p class="quote">“결국 가장 자주 쓰는 건<br>가장 비싼 펜이 아니더라고요.”</p>
+          <div class="ink-sample"><span>가볍게, 매일.</span><i></i><i></i><i></i><small>PILOT PRERA · EF · 9개월</small></div>
+          <div class="reactions"><button class="react">나도 그래 <b>38</b></button><button>이야기 <b>12</b></button><button>저장</button></div>
+        </article>
+
+        <article class="debate-card">
+          <div class="card-meta"><span>라이트 방 · 같이 고르기</span><span>진행 중</span></div>
+          <h3>비 오는 퇴근길,<br>당신의 빛은?</h3>
+          <div class="versus"><button data-vote="58"><span class="beam warm"></span><b>따뜻하고 넓게</b><small>눈이 덜 피곤해요</small></button><em>VS</em><button data-vote="42"><span class="beam cool"></span><b>하얗고 멀리</b><small>노면이 잘 보여요</small></button></div>
+          <p class="vote-note">91명이 고르는 중 · 투표하면 각자의 이유가 열려요</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="manifesto">
+      <p class="eyebrow">OUR CLUB RULE</p>
+      <div><span>01</span><h2>가격보다 <em>이유를.</em></h2></div>
+      <div><span>02</span><h2>새것보다 <em>쓴 흔적을.</em></h2></div>
+      <div><span>03</span><h2>정답보다 <em>각자의 방식.</em></h2></div>
+      <footer><p>여기는 물건을 사는 곳이 아니라,<br>물건을 매개로 사람을 알아가는 곳입니다.</p><button class="paper-button" data-compose>내 이야기 시작하기 ↗</button></footer>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="#top"><span>PC</span><b>POCKET<br>CLUB</b></a>
+    <p>EVERYDAY CARRY,<br>EVERYONE'S STORY.</p>
+    <div><a href="#clubrooms">품목별 방</a><a href="#prompt">오늘의 주제</a><a href="#">커뮤니티 약속</a></div>
+    <small>CONCEPT 03 · 2026</small>
+  </footer>
+
+  <dialog id="composeDialog">
+    <form method="dialog" class="composer">
+      <header><div><p class="eyebrow">OPEN YOUR POCKET</p><h2>오늘은 무엇으로<br>당신을 말할까요?</h2></div><button value="cancel" aria-label="닫기">×</button></header>
+      <p>품목을 고르면 그 이야기에 가장 잘 맞는 기록 도구를 열어드려요.</p>
+      <div class="compose-grid">
+        <button value="carry" data-compose-type><b>전체 캐리</b><span>사진 위에 선택의 이유 붙이기</span><i>01 ↗</i></button>
+        <button value="light" data-compose-type><b>라이트</b><span>빔샷과 설정 겹쳐보기</span><i>02 ↗</i></button>
+        <button value="bag" data-compose-type><b>가방·파우치</b><span>나만의 수납 지도 그리기</span><i>03 ↗</i></button>
+        <button value="tool" data-compose-type><b>도구</b><span>오늘 해결한 일 남기기</span><i>04 ↗</i></button>
+        <button value="write" data-compose-type><b>필기구</b><span>획과 마름을 샘플로 남기기</span><i>05 ↗</i></button>
+      </div>
+    </form>
+  </dialog>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <button class="mobile-compose ink-button" data-compose>내 주머니 열기 ＋</button>
+  <script src="app.js"></script>
+</body>
+</html>
