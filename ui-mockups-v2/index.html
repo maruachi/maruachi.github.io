@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PlanRepo — 문서에서 시작해 팀의 합의로 완성하는 개발">
+  <title>PlanRepo · 팀의 생각이 하나의 명세로</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#document">문서로 건너뛰기</a>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="PlanRepo 홈"><span class="brand-mark">p<span>↗</span></span>PlanRepo<span class="version">BETA</span></a>
+    <span class="top-divider"></span>
+    <button id="workspace-button" class="workspace-button" aria-haspopup="dialog"><span class="repo-icon">▣</span><span><strong id="repo-name">acme / commerce-platform</strong><small><span class="connection-dot"></span> GitHub 연결됨 <span class="branch-label">⑂ main</span></small></span><span class="chevron">⌄</span></button>
+    <div class="top-right"><span class="demo-label">인터랙티브 시안</span><button class="icon-button" data-action="settings" aria-label="프로젝트 설정" title="프로젝트 설정">⚙</button><span class="avatar me" title="김서연 · 관리자">서</span></div>
+  </header>
+  <nav class="actionbar" aria-label="작업 도구">
+    <div class="actionbar-left"><button class="icon-button panel-toggle" id="toggle-left" aria-label="협의 대기열 닫기" aria-expanded="true">◧</button><button class="queue-shortcut active" data-queue="decisions">의사결정 <span id="top-decision-count" class="count">3</span></button><button class="queue-shortcut" data-queue="requests">의견 요청 <span id="top-request-count" class="count neutral">2</span></button></div>
+    <div class="actionbar-center"><span class="tiny-dot"></span> Inception <span class="subtle">/</span> <span>팀의 생각을 명세로 모으는 중</span></div>
+    <button class="tree-toggle" id="toggle-right" aria-expanded="true">문서 트리 <span>◨</span></button>
+  </nav>
+  <div class="workspace" id="workspace">
+    <aside class="left-panel" id="left-panel" aria-label="협의 대기열">
+      <div class="panel-heading"><div><span class="eyebrow">TEAM WORKSPACE</span><h2>함께 결정할 일</h2></div><span class="live-dot" title="예시 상태"></span></div>
+      <div class="queue-tabs" role="tablist" aria-label="대기열"><button id="decision-tab" role="tab" aria-selected="true" data-queue="decisions">의사결정 <span id="decision-tab-count">3</span></button><button id="request-tab" role="tab" aria-selected="false" data-queue="requests">의견 요청 <span id="request-tab-count">2</span></button></div>
+      <div class="queue-filter"><span id="queue-description">결정을 기다리고 있어요</span><span>우선순위 순 ↓</span></div>
+      <div id="queue-list" class="queue-list" role="tabpanel"></div>
+      <div class="left-bottom"><div class="batch-state"><span><span class="tiny-dot"></span> 선택한 의사결정</span><strong id="selected-count">0개</strong></div><button class="primary full" id="apply-decisions" disabled>선택 결과 일괄 반영 <span>↗</span></button><button class="text-button full" data-action="revisions">수정 요청 모아보기 <span id="revision-count" class="count neutral">2</span></button></div>
+      <div class="team-note"><div class="mini-avatars"><span class="avatar">서</span><span class="avatar blue">준</span><span class="avatar sand">하</span></div><span>좋은 명세는, 함께 만듭니다.</span></div>
+    </aside>
+    <main class="main-panel" id="main-panel">
+      <div class="document-toolbar"><div class="breadcrumbs"><span>specs</span><span>/</span><span>inception</span><span>/</span><strong id="breadcrumb-name">requirements.md</strong></div><button class="small-button" data-action="summary"><span class="spark">✧</span> AI 인사이트</button></div>
+      <div class="document-scroll" id="document-scroll"><article id="document" tabindex="-1"></article></div>
+      <footer class="document-footer"><span><span class="connection-dot"></span> <span id="footer-state">모든 변경사항 확인 완료</span></span><span>Markdown <span class="footer-divider">·</span> UTF-8 <span class="footer-divider">·</span> <span id="footer-path">/specs/inception/requirements.md</span></span></footer>
+    </main>
+    <aside class="right-panel" id="right-panel" aria-label="문서 트리">
+      <div class="tree-heading"><h2>문서 탐색</h2><button class="icon-button" data-action="settings" aria-label="Spec 폴더 설정" title="Spec 폴더 설정">⚙</button></div>
+      <label class="search"><span>⌕</span><input id="document-search" placeholder="문서 찾기…" aria-label="문서 찾기"><kbd>/</kbd></label>
+      <div class="tree-root"><span>⌄</span> <span class="folder">▱</span> specs <span class="tree-total">5</span></div>
+      <div class="folder-group"><button class="folder-toggle" aria-expanded="true" data-folder="inception"><span>⌄</span><span class="folder">▱</span> inception</button><div id="folder-inception" class="tree-files"></div></div>
+      <div class="folder-group"><button class="folder-toggle" aria-expanded="true" data-folder="construction"><span>⌄</span><span class="folder">▱</span> construction</button><div id="folder-construction" class="tree-files"></div></div>
+      <p id="search-empty" class="empty-text" hidden>일치하는 문서가 없습니다.</p>
+      <div class="right-section"><div class="section-label">문서 승인 <span id="approval-status">검토 중</span></div><div class="approval-faces"><div class="mini-avatars"><span class="avatar blue">준</span><span class="avatar sand">하</span><span class="avatar me">서</span></div><strong id="approval-counter">1 / 3</strong></div><div class="progress-track"><span id="approval-progress"></span></div><p id="approval-caption">지정된 검토자 3명의 승인이 필요해요.</p><button id="approve-document" class="outline full">✓ 문서 승인하기</button><div class="read-status"><span>◉</span><span id="read-status">김준호, 이하린, 내가 읽었어요</span></div></div>
+      <div class="right-section toc"><div class="section-label">이 문서의 목차</div><div id="toc"></div></div>
+      <div class="project-progress"><span class="eyebrow">INCEPTION PROGRESS</span><div><strong id="project-approved">2<span> / 5</span></strong><span>문서 승인 완료</span></div><div class="progress-track"><span id="project-progress-bar" style="width:40%"></span></div><p>작은 합의가 다음 단계를 만듭니다.</p></div>
+    </aside>
+  </div>
+  <dialog id="modal"><div class="modal-top"><div><span class="eyebrow" id="modal-eyebrow">PLANREPO</span><h2 id="modal-title"></h2></div><button class="icon-button" id="close-modal" aria-label="닫기">✕</button></div><div id="modal-body"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
