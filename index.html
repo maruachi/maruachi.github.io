@@ -3,447 +3,54 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Pockets UI 시안 v1부터 v7까지 한곳에서 확인하세요.">
-  <title>Pockets — UI 시안 모아보기</title>
+  <title>UI 시안</title>
   <style>
-    :root {
-      color-scheme: light;
-      --paper: #f1f0eb;
-      --panel: rgba(255, 255, 255, .86);
-      --ink: #171a18;
-      --muted: #717773;
-      --line: rgba(23, 26, 24, .12);
-      --accent: #df5b2f;
-      --accent-soft: #f9e4dc;
-      --shadow: 0 18px 60px rgba(28, 32, 29, .12);
-    }
-
     * { box-sizing: border-box; }
-
-    html, body { height: 100%; }
 
     body {
       margin: 0;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 4% 0%, rgba(223, 91, 47, .1), transparent 26rem),
-        var(--paper);
-      color: var(--ink);
-      font-family: Pretendard, "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      -webkit-font-smoothing: antialiased;
+      padding: 40px;
+      background: #fff;
+      color: #111;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    button, a { color: inherit; font: inherit; }
-    button { cursor: pointer; }
-
-    .app {
-      display: grid;
-      grid-template-columns: 260px minmax(0, 1fr);
-      min-height: 100%;
-    }
-
-    .sidebar {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-      padding: 30px 24px 22px;
-      border-right: 1px solid var(--line);
-      background: rgba(245, 244, 239, .9);
-      backdrop-filter: blur(18px);
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 19px;
-      font-weight: 850;
-      letter-spacing: -.04em;
-    }
-
-    .brand-mark {
-      position: relative;
-      width: 27px;
-      height: 27px;
-      border: 2px solid var(--ink);
-      border-radius: 50%;
-    }
-
-    .brand-mark::after {
-      position: absolute;
-      inset: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      content: "";
-    }
-
-    .intro {
-      margin: 58px 0 28px;
-    }
-
-    .eyebrow {
-      margin: 0 0 10px;
-      color: var(--accent);
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .13em;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 27px;
-      line-height: 1.16;
-      letter-spacing: -.065em;
-    }
-
-    .intro p:last-child {
-      margin: 14px 0 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.65;
-    }
-
-    .version-list {
-      display: grid;
-      gap: 7px;
+    ul {
+      width: min(100%, 360px);
       margin: 0;
       padding: 0;
+      border-top: 1px solid #ddd;
       list-style: none;
     }
 
-    .version-button {
-      display: grid;
-      width: 100%;
-      grid-template-columns: 38px 1fr auto;
-      align-items: center;
-      gap: 8px;
-      padding: 11px 12px;
-      border: 1px solid transparent;
-      border-radius: 12px;
-      background: transparent;
-      text-align: left;
-      transition: background .18s ease, border-color .18s ease, transform .18s ease;
-    }
-
-    .version-button:hover {
-      border-color: var(--line);
-      background: rgba(255, 255, 255, .65);
-      transform: translateX(2px);
-    }
-
-    .version-button[aria-selected="true"] {
-      border-color: rgba(223, 91, 47, .22);
-      background: var(--accent-soft);
-    }
-
-    .version-no {
-      color: var(--muted);
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 11px;
-    }
-
-    .version-button strong {
-      font-size: 14px;
-      letter-spacing: -.02em;
-    }
-
-    .version-button span:last-child {
-      opacity: 0;
-      color: var(--accent);
-      transition: opacity .18s ease;
-    }
-
-    .version-button[aria-selected="true"] span:last-child { opacity: 1; }
-
-    .sidebar-footer {
-      margin-top: auto;
-      color: var(--muted);
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 9px;
-      line-height: 1.6;
-      letter-spacing: .08em;
-    }
-
-    .viewer {
-      display: grid;
-      min-width: 0;
-      min-height: 100vh;
-      grid-template-rows: 70px minmax(0, 1fr);
-      padding: 0 18px 18px;
-    }
-
-    .viewer-header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-    }
-
-    .viewer-title {
-      min-width: 0;
-    }
-
-    .viewer-title strong,
-    .viewer-title span { display: block; }
-
-    .viewer-title strong {
-      overflow: hidden;
-      font-size: 14px;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .viewer-title span {
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .pager {
-      display: flex;
-      gap: 5px;
-      margin-left: auto;
-    }
-
-    .icon-button,
-    .open-button {
-      display: inline-flex;
-      height: 36px;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--line);
-      border-radius: 9px;
-      background: rgba(255, 255, 255, .72);
-      transition: border-color .18s ease, background .18s ease;
-    }
-
-    .icon-button { width: 36px; font-size: 17px; }
-    .icon-button:disabled { cursor: default; opacity: .35; }
-    .icon-button:not(:disabled):hover, .open-button:hover { border-color: rgba(23, 26, 24, .28); background: white; }
-
-    .open-button {
-      gap: 7px;
-      padding: 0 13px;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .frame-shell {
-      position: relative;
-      min-height: 0;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      background: #fff;
-      box-shadow: var(--shadow);
-    }
-
-    .browser-bar {
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      right: 0;
-      left: 0;
-      display: flex;
-      height: 30px;
-      align-items: center;
-      gap: 5px;
-      padding: 0 12px;
-      border-bottom: 1px solid rgba(23, 26, 24, .08);
-      background: #f7f7f5;
-    }
-
-    .browser-bar i {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #d2d3cf;
-    }
-
-    .browser-bar span {
-      margin: auto;
-      padding-right: 24px;
-      color: #8a8f8b;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 9px;
-    }
-
-    iframe {
+    a {
       display: block;
-      width: 100%;
-      height: 100%;
-      padding-top: 30px;
-      border: 0;
-      background: #fff;
+      padding: 16px 4px;
+      border-bottom: 1px solid #ddd;
+      color: inherit;
+      font-size: 18px;
+      text-decoration: none;
     }
 
-    @media (max-width: 780px) {
-      body { overflow: auto; }
+    a:hover { background: #f5f5f5; }
 
-      .app {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto minmax(620px, calc(100vh - 168px));
-      }
-
-      .sidebar {
-        min-height: auto;
-        padding: 16px;
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .intro, .sidebar-footer { display: none; }
-      .brand { font-size: 17px; }
-      .brand-mark { width: 23px; height: 23px; }
-
-      .version-list {
-        display: flex;
-        gap: 5px;
-        margin-top: 14px;
-        overflow-x: auto;
-        scrollbar-width: none;
-      }
-
-      .version-list::-webkit-scrollbar { display: none; }
-
-      .version-button {
-        display: flex;
-        width: auto;
-        flex: 0 0 auto;
-        padding: 9px 13px;
-        border-color: var(--line);
-        border-radius: 999px;
-        background: rgba(255, 255, 255, .55);
-      }
-
-      .version-button:hover { transform: none; }
-      .version-no, .version-button span:last-child { display: none; }
-
-      .viewer {
-        min-height: 0;
-        grid-template-rows: 58px minmax(0, 1fr);
-        padding: 0 10px 10px;
-      }
-
-      .viewer-title span { display: none; }
-      .open-button { width: 36px; padding: 0; font-size: 0; }
-      .open-button span { font-size: 16px; }
-      .frame-shell { border-radius: 11px; }
+    @media (max-width: 520px) {
+      body { padding: 24px; }
+      ul { width: 100%; }
     }
   </style>
 </head>
 <body>
-  <div class="app">
-    <aside class="sidebar">
-      <div class="brand"><span class="brand-mark" aria-hidden="true"></span>POCKETS</div>
-
-      <div class="intro">
-        <p class="eyebrow">UI EXPLORATIONS / 01—07</p>
-        <h1>시안을 골라<br>비교해 보세요.</h1>
-        <p>서로 다른 방향으로 설계한 일곱 개의 커뮤니티 UI입니다.</p>
-      </div>
-
-      <nav aria-label="UI 시안 버전">
-        <ol class="version-list" role="tablist"></ol>
-      </nav>
-
-      <p class="sidebar-footer">POCKETS DESIGN ARCHIVE<br>SEPTEMBER 2026</p>
-    </aside>
-
-    <main class="viewer">
-      <header class="viewer-header">
-        <div class="viewer-title">
-          <strong id="current-title">v1 · POCKET</strong>
-          <span id="current-path">v1/index.html</span>
-        </div>
-        <div class="pager" aria-label="시안 이동">
-          <button class="icon-button" id="previous" type="button" aria-label="이전 시안">←</button>
-          <button class="icon-button" id="next" type="button" aria-label="다음 시안">→</button>
-        </div>
-        <a class="open-button" id="open-page" href="v1/index.html" target="_blank" rel="noopener">새 창에서 보기 <span>↗</span></a>
-      </header>
-
-      <section class="frame-shell" aria-label="선택한 UI 시안 미리보기">
-        <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span id="browser-path">/v1/index.html</span></div>
-        <iframe id="preview" title="v1 UI 시안" src="v1/index.html"></iframe>
-      </section>
-    </main>
-  </div>
-
-  <script>
-    const versions = [
-      { id: "v1", name: "POCKET", path: "v1/index.html" },
-      { id: "v2", name: "CARRY/FORM", path: "v2/index.html" },
-      { id: "v3", name: "POCKET CLUB", path: "v3/index.html" },
-      { id: "v4", name: "POCKETS", path: "v4/index.html" },
-      { id: "v5", name: "COMMUNITY", path: "v5/index.html" },
-      { id: "v6", name: "CARRY STORIES", path: "v6/index.html" },
-      { id: "v7", name: "DESIGN BOARD", path: "v7/index.html" }
-    ];
-
-    const list = document.querySelector(".version-list");
-    const preview = document.querySelector("#preview");
-    const title = document.querySelector("#current-title");
-    const pathLabel = document.querySelector("#current-path");
-    const browserPath = document.querySelector("#browser-path");
-    const openPage = document.querySelector("#open-page");
-    const previous = document.querySelector("#previous");
-    const next = document.querySelector("#next");
-    let currentIndex = 0;
-
-    versions.forEach((version, index) => {
-      const item = document.createElement("li");
-      item.innerHTML = `<button class="version-button" type="button" role="tab" aria-selected="false" data-index="${index}"><span class="version-no">0${index + 1}</span><strong>${version.id.toUpperCase()}</strong><span>→</span></button>`;
-      list.append(item);
-    });
-
-    const buttons = [...document.querySelectorAll(".version-button")];
-
-    function selectVersion(index, updateHash = true) {
-      currentIndex = Math.max(0, Math.min(versions.length - 1, index));
-      const version = versions[currentIndex];
-
-      buttons.forEach((button, buttonIndex) => {
-        button.setAttribute("aria-selected", String(buttonIndex === currentIndex));
-      });
-
-      preview.src = version.path;
-      preview.title = `${version.id} UI 시안`;
-      title.textContent = `${version.id} · ${version.name}`;
-      pathLabel.textContent = version.path;
-      browserPath.textContent = `/${version.path}`;
-      openPage.href = version.path;
-      previous.disabled = currentIndex === 0;
-      next.disabled = currentIndex === versions.length - 1;
-      buttons[currentIndex].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
-
-      if (updateHash) history.replaceState(null, "", `#${version.id}`);
-    }
-
-    list.addEventListener("click", (event) => {
-      const button = event.target.closest(".version-button");
-      if (button) selectVersion(Number(button.dataset.index));
-    });
-
-    previous.addEventListener("click", () => selectVersion(currentIndex - 1));
-    next.addEventListener("click", () => selectVersion(currentIndex + 1));
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "ArrowLeft" && currentIndex > 0) selectVersion(currentIndex - 1);
-      if (event.key === "ArrowRight" && currentIndex < versions.length - 1) selectVersion(currentIndex + 1);
-    });
-
-    window.addEventListener("hashchange", () => {
-      const index = versions.findIndex((version) => `#${version.id}` === location.hash.toLowerCase());
-      if (index >= 0) selectVersion(index, false);
-    });
-
-    const initialIndex = versions.findIndex((version) => `#${version.id}` === location.hash.toLowerCase());
-    selectVersion(initialIndex >= 0 ? initialIndex : 0, initialIndex < 0);
-  </script>
+  <ul>
+    <li><a href="v1/index.html">v1</a></li>
+    <li><a href="v2/index.html">v2</a></li>
+    <li><a href="v3/index.html">v3</a></li>
+    <li><a href="v4/index.html">v4</a></li>
+    <li><a href="v5/index.html">v5</a></li>
+    <li><a href="v6/index.html">v6</a></li>
+    <li><a href="v7/index.html">v7</a></li>
+    <li><a href="v8/index.html">v8</a></li>
+    <li><a href="v9/index.html">v9</a></li>
+  </ul>
 </body>
 </html>
